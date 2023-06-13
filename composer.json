@@ -1,0 +1,11 @@
+{
+    "require": {
+        "ckeditor/ckeditor": "^4.20",
+        "drmonty/animate.css": "^3.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "robloach/component-installer": true
+        }
+    }
+}

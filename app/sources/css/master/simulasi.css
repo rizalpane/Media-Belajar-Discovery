@@ -1,0 +1,76 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url("../bootstrap/bootstrap.css");
+
+/* mechanical css */
+
+.css-img{
+  overflow: hidden;
+  height: 50% ;
+  width: 50%;
+}
+
+input[type="file"]::before {
+  display: none;
+}
+
+.textarea {
+  resize: none;
+  overflow: auto;
+  white-space: pre;
+}
+
+/* bostrao modify */
+:root {
+    --bs-primary: #dc143c;
+    --bs-primary-rgb: 220, 20, 60;
+
+    --bs-linkedin: #0e76a8;
+    --bs-linkedin-rgb: 14, 118, 168;
+
+    --bs-twitter: #1DA1F2;
+    --bs-twitter-rgb: 29, 161, 242;
+
+    --bs-facebook: #4267B2;
+    --bs-facebook-rgb: 66, 103, 178;
+    
+}
+
+.text-linkedin {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-linkedin-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-twitter {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-twitter-rgb), var(--bs-text-opacity)) !important;
+}
+.text-facebook {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-facebook-rgb), var(--bs-text-opacity)) !important;
+}
+
+.alert-primary {
+    --bs-alert-color: #dc143c;
+    --bs-alert-bg: #cfe2ff;
+    --bs-alert-border-color: #b6d4fe;
+  }
+  .alert-primary .alert-link {
+    color: #dc143c;
+  }
+
+  .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #dc143c;
+    --bs-btn-border-color: #dc143c;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #dc143c;
+    --bs-btn-hover-border-color: #dc143c;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #dc143c;
+    --bs-btn-active-border-color: #dc143c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #dc143c;
+    --bs-btn-disabled-border-color: #dc143c;
+  }
