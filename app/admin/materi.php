@@ -447,8 +447,7 @@ include 'cek.php';
                                         while ($tguru = mysqli_fetch_array($result)) {
                                         ?>
                                             <form method="POST" action="run.php">
-                                                <input type="hidden" name="id" value="<?php echo $tguru['id']; ?>">
-
+                                                <input name="id" value="<?php echo $tguru['id']; ?>" hidden>
                                                 <div class="mb-3" id="kunci-jawaban">
                                                     <select name="kunci[]" class="form-select" size="5" multiple aria-label="Kunci Jawaban">
                                                         <?php

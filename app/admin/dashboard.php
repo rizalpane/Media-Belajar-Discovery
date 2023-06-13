@@ -14,8 +14,10 @@ include 'cek.php';
     <!-- css -->
     <link rel="stylesheet" href="../sources/css/master/simulasi.css">
     <!-- js -->
-    <script src="/project/project/vendor/ckeditor/ckeditor/ckeditor.js"></script>
-    <script src="../sources/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -80,7 +82,7 @@ include 'cek.php';
                                         ?>
                                             <form method="POST" action="run.php">
                                                 <input type="hidden" name="id" value="<?php echo $point['id'] ?>">
-                                                <textarea class="form-control" name="point" id="point" rows="10" cols="80"><?php echo  $point['point']; ?></textarea>
+                                                <textarea class="form-control" name="point" id="editorfirst" rows="10" cols="80"><?php echo  $point['point']; ?></textarea>
                                                 <div class="input-group mt-3">
                                                     <input type="submit" class="btn btn-primary btn-gradient fw-bold w-100 " name="deskripsiPanduanEdit" value="Ubah">
                                                 </div>
@@ -104,7 +106,7 @@ include 'cek.php';
                                         <form action="run.php" method="post">
                                             <div class="mb-3">
                                                 <label for="point">Tambah Panduan :</label>
-                                                <textarea class="form-control" name="point" id="point" cols="30" rows="10"></textarea>
+                                                <textarea class="form-control" name="point" id="editorSeccond" cols="30" rows="10"></textarea>
                                             </div>
                                             <input class="btn btn-primary" type="submit" name="listPanduanAdd" value="Tambah">
                                         </form>
@@ -319,5 +321,18 @@ include 'cek.php';
         </div>
     </div>
 </body>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editorfirst'))
+        .catch(error => {
+            console.error(error);
+        });
+    ClassicEditor
+        .create(document.querySelector('#editorSeccond'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 
 </html>

@@ -18,29 +18,27 @@ include 'admin/cek.php';
 </head>
 
 <body>
-    <nav class="navbar bg-light p-3 mb-5">
+    <nav class="navbar bg-dark text-light container rounded-pill p-3 mt-3">
         <div class="container-fluid ">
-            <h4 class="animated bounceIn title fw-bold ">TAHAP IDENTIFIKASI MASALAH</h4>
-            <div class="d-flex">
-                <a class="animated bounceIn btn btn-primary fw-bold me-2" href="02.php"><i class="bi bi-skip-start-fill "></i> Back</a>
-
-                <a class="animated bounceIn btn btn-primary fw-bold" href="04.php">Next <i class="bi bi-skip-end-fill "></i></a>
-
+            <div class="fs-4">TAHAP IDENTIFIKASI MASALAH</div>
+            <div class="d-flex ">
+                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="02.php"> <i class="bi bi-skip-start-fill "></i> Kebali </a>
+                <a class="animated bounceIn btn btn-primary fw-bold" href="04.php">Lanjutkan Penggumpulan Data <i class="bi bi-skip-end-fill "></i></a>
             </div>
         </div>
     </nav>
+
     <div class="container">
         <?php
         $query = "SELECT * FROM masalah ";
         $result = mysqli_query($connection, $query);
         while ($masalah = mysqli_fetch_assoc($result)) {
         ?>
-            <div class="mb-5">
-                <center>
-                    <img class="img-fluid m-3" src="./upload/pertanyaan/<?php echo $masalah['img'] ?>" alt="<?php echo $masalah['img'] ?>">
-                </center>
-            </div>
-            <div class="mb-3">
+            <!-- <div class="mb-5">
+                <img class="img-fluid mt-3 rounded-5 shadow-sm" src="./upload/pertanyaan/<?php echo $masalah['img'] ?>" alt="<?php echo $masalah['img'] ?>">
+            </div> -->
+
+            <div class="my-5 p-3 fs-4 text-center text-primary bg-light rounded-3 ">
                 <?php echo $masalah['pertanyaan'] ?>
             </div>
         <?php } ?>

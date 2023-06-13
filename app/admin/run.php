@@ -226,12 +226,13 @@ if (isset($_POST['listPanduanAdd'])) {
     }
 }
 
+// TANGGAPAN GURU
 if (isset($_POST['tanggapanGuruEdit'])) {
     $id = $_POST['id'];
     $kelompok = $_POST['kunci'];
     $tanggapan = $_POST['tanggapan'];
-    $kelompokStr = implode(",", $kelompok);
-    $tanggapanGuruEdit = mysqli_query($connection, "UPDATE tguru SET kelompok='$kelompokStr', tanggapan='$tanggapan' WHERE id='$id'");
+    $kelompokstr = implode(",", $kelompok);
+    $tanggapanGuruEdit = mysqli_query($connection, "UPDATE tguru SET kelompok='$kelompokstr', tanggapan='$tanggapan' WHERE id='$id'");
     if ($tanggapanGuruEdit) {
         header('Location: materi.php');
     }

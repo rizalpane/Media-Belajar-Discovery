@@ -19,12 +19,12 @@ include 'admin/cek.php';
 </head>
 
 <body>
-    <nav class="navbar bg-light p-3 mb-5">
+    <nav class="navbar bg-dark text-light container rounded-pill p-3 mt-3">
         <div class="container-fluid ">
-            <h4 class="animated bounceIn title fw-bold ">TAHAP PEMBUKTIAN DATA</h4>
-            <div class="d-flex">
-                <a class="animated bounceIn btn btn-primary fw-bold me-2" href="05.php"><i class="bi bi-skip-start-fill "></i> Back</a>
-                <a class="animated bounceIn btn btn-primary fw-bold" href="07.php">Next <i class="bi bi-skip-end-fill "></i></a>
+            <div class="fs-4">TAHAP PEMBUKTIAN</div>
+            <div class="d-flex ">
+                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="05.php"> <i class="bi bi-skip-start-fill "></i> Kebali </a>
+                <a class="animated bounceIn btn btn-primary fw-bold" href="07.php">Lanjutkan Pembuktian <i class="bi bi-skip-end-fill "></i></a>
             </div>
         </div>
     </nav>
@@ -39,27 +39,23 @@ include 'admin/cek.php';
 
     ?>
 
-            <div class="container mb-5">
-                <div class=" text-center bg-primary text-white p-2 mb-5">
-                    <h4>TANGGAPAN KELOMPOK : <?php echo $tkelompok['kelompok']; ?> </h4>
+            <div class="container my-5">
+                <div class=" text-center p-3  fs-5 text-light bg-primary rounded-3 ">
+                    TANGGAPAN KELOMPOK : <?php echo $tkelompok['kelompok']; ?>
                 </div>
-                <div>
-                    <blockquote class="blockquote">
-                        <?php echo $tkelompok['tanggapan']; ?>
-                    </blockquote>
+                <div class="bg-light p-3 text-center">
+                    <?php echo $tkelompok['tanggapan']; ?>
                 </div>
             </div>
 
         <?php } ?>
 
         <div class="container">
-            <div class=" text-center bg-primary text-white p-2 mb-5">
-                <h4>TANGGAPAN GURU </h4>
+            <div class=" text-center p-3  fs-5 text-light bg-primary rounded-3">
+                TANGGAPAN GURU
             </div>
-            <div>
-                <blockquote class="blockquote">
-                    <?php echo $tguru['tanggapan']; ?>
-                </blockquote>
+            <div class="bg-light p-3 text-center">
+                <?php echo $tguru['tanggapan']; ?>
             </div>
         </div>
 
