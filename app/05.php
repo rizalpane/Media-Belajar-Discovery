@@ -22,7 +22,7 @@ include 'admin/cek.php';
         <div class="container-fluid ">
             <div class="fs-4">TAHAP PENGOLAHAN DATA</div>
             <div class="d-flex ">
-                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="04.php"> <i class="bi bi-skip-start-fill "></i> Kebali </a>
+                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="04.php"> <i class="bi bi-skip-start-fill "></i> Kembali </a>
                 <a class="animated bounceIn btn btn-primary fw-bold" href="06.php">Lanjutkan Pembuktian <i class="bi bi-skip-end-fill "></i></a>
             </div>
         </div>

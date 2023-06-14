@@ -12,34 +12,36 @@ if (isset($_POST['soalCek'])) {
     $salah    = 0;
     $kosong   = 0;
 
-    for ($i = 0; $i < $jumlah; $i++) {
-        $nomor    = $id_soal[$i];
-
-        if (empty($pilihan[$nomor])) {
-            $kosong++;
-        }
-        // jika memilih
-        else {
-            $jawaban    = $pilihan[$nomor];
-            $query    = mysqli_query($connection, "SELECT * FROM soal WHERE id='$nomor' AND kunci='$jawaban'");
-            $cek    = mysqli_num_rows($query);
-
-            if ($cek) {
-                $benar++;
-            } else {
-                $salah++;
+        for ($i = 0; $i < $jumlah; $i++) {
+            $nomor    = $id_soal[$i];
+    
+            if (empty($pilihan[$nomor])) {
+                $kosong++;
             }
+            // jika memilih
+            else {
+                $jawaban    = $pilihan[$nomor];
+                $query    = mysqli_query($connection, "SELECT * FROM soal WHERE id='$nomor' AND kunci='$jawaban'");
+                $cek    = mysqli_num_rows($query);
+    
+                if ($cek) {
+                    $benar++;
+                } else {
+                    $salah++;
+                }
+            }   
         }
-
-        $hitung = mysqli_query($connection, "SELECT * FROM soal WHERE status='Y'");
-        $jumlah_soal    = mysqli_num_rows($hitung);
-        $score    = 100 / $jumlah_soal * $benar;
-    }
-
-    $addnilais = mysqli_query($connection, "INSERT INTO nilai values('','$_SESSION[username]','$score')");
-
-
-?>
+        if($benar + $salah == 10) {
+            $hitung = mysqli_query($connection, "SELECT * FROM soal WHERE status='Y'");
+            $jumlah_soal    = mysqli_num_rows($hitung);
+            $score    = 100 / $jumlah_soal * $benar;
+            
+            $addnilais = mysqli_query($connection, "INSERT INTO nilai values('','$_SESSION[username]','$score')");
+        }else{
+            header('Location: /project/app/soal.php');
+        } 
+        
+        ?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -75,9 +77,7 @@ if (isset($_POST['soalCek'])) {
             $no = 1;
             $noo = 1;
             $soals = mysqli_query($connection, "select * from soal");
-            while ($soal = mysqli_fetch_array($soals)) {
-
-            ?>
+            while ($soal = mysqli_fetch_array($soals)) { ?>
 
                 <div class="my-3 alert alert-info text-dark">
                     <?php echo $no++ ?>. <span><?php echo $soal['soal'] ?></span><br><br>
@@ -85,15 +85,11 @@ if (isset($_POST['soalCek'])) {
                                                                     echo $soal[$keypilihan];  ?></span>
                     </p>
                     <p>Jawaban Benar : <span class="text-success"><?php
-                                                                    $keyjawaban = $soal['kunci'];
+                                                                    $keyjawaban = strtolower($soal['kunci']);
                                                                     echo $soal[$keyjawaban]; ?></span>
                     </p>
                 </div>
-
-
-
-            <?php
-            } ?>
+            <?php } ?>
         </div>
     </body>
 

@@ -25,6 +25,7 @@ include 'admin/cek.php';
             <div class="fs-4">TAHAP STIMULASI</div>
 
             <div class="d-flex">
+            <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="01.php"> <i class="bi bi-skip-start-fill "></i> Kompetensi Dasar </a>
                 <a class="animated bounceIn btn btn-primary fw-bold" href="03.php">Lanjutkan Identifikasi Masalah <i class="bi bi-skip-end-fill "></i></a>
             </div>
 

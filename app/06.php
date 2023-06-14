@@ -23,8 +23,8 @@ include 'admin/cek.php';
         <div class="container-fluid ">
             <div class="fs-4">TAHAP PEMBUKTIAN</div>
             <div class="d-flex ">
-                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="05.php"> <i class="bi bi-skip-start-fill "></i> Kebali </a>
-                <a class="animated bounceIn btn btn-primary fw-bold" href="07.php">Lanjutkan Pembuktian <i class="bi bi-skip-end-fill "></i></a>
+                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="05.php"> <i class="bi bi-skip-start-fill "></i> Kembali </a>
+                <a class="animated bounceIn btn btn-primary fw-bold" href="07.php">Lanjutkan Kesimpulan <i class="bi bi-skip-end-fill "></i></a>
             </div>
         </div>
     </nav>
@@ -43,7 +43,7 @@ include 'admin/cek.php';
                 <div class=" text-center p-3  fs-5 text-light bg-primary rounded-3 ">
                     TANGGAPAN KELOMPOK : <?php echo $tkelompok['kelompok']; ?>
                 </div>
-                <div class="bg-light p-3 text-center">
+                <div class="bg-light p-3 text-left">
                     <?php echo $tkelompok['tanggapan']; ?>
                 </div>
             </div>
@@ -54,7 +54,7 @@ include 'admin/cek.php';
             <div class=" text-center p-3  fs-5 text-light bg-primary rounded-3">
                 TANGGAPAN GURU
             </div>
-            <div class="bg-light p-3 text-center">
+            <div class="bg-light p-3 text-left">
                 <?php echo $tguru['tanggapan']; ?>
             </div>
         </div>

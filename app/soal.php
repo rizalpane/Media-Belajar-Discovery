@@ -35,7 +35,10 @@ include 'admin/cek.php';
             $jawaban = mysqli_query($connection, "SELECT * FROM nilai WHERE username='$user[username]'");
             if (mysqli_num_rows($jawaban) == 0) {
         ?>
-                <h1 class="mb-5 "> Jawablah Pertanyaan Di Bawah ini dengan benar :</h1>
+                <div class="fs-4 my-5 text-primary">
+                    Jawablah Pertanyaan Di Bawah ini dengan benar :
+                </div>
+
                 <form action="admin/soalcek.php" method="post">
                     <?php
                     $no = 1;
@@ -53,19 +56,19 @@ include 'admin/cek.php';
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>A. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="a"> <?php echo $soal['a']; ?></td>
+                                <td>A. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="a" > <?php echo $soal['a']; ?></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>B. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="b"> <?php echo $soal['b']; ?></td>
+                                <td>B. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="b" > <?php echo $soal['b']; ?></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>C. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="c"> <?php echo $soal['c']; ?></td>
+                                <td>C. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="c" > <?php echo $soal['c']; ?></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>D. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="d"> <?php echo $soal['d']; ?></td>
+                                <td>D. <input class="radio" name="pilihan[<?php echo $soal['id'] ?>]" type="radio" value="d" > <?php echo $soal['d']; ?></td>
                             </tr>
 
                         <?php

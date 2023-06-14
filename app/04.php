@@ -24,7 +24,7 @@ include 'admin/cek.php';
         <div class="container-fluid ">
             <div class="fs-4">TAHAP PENGUMPULAN DATA</div>
             <div class="d-flex ">
-                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="03.php"> <i class="bi bi-skip-start-fill "></i> Kebali </a>
+                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="03.php"> <i class="bi bi-skip-start-fill "></i> Kembali </a>
                 <a class="animated bounceIn btn btn-primary fw-bold" href="05.php">Lanjutkan Penggumpulan Data <i class="bi bi-skip-end-fill "></i></a>
             </div>
         </div>
@@ -32,19 +32,9 @@ include 'admin/cek.php';
 
     <div class="container">
 
-        <div class="mt-5 mb-3  fs-2">
-            TULISKAN TANGGAPAN MENGENAI VIDIO SESUAI PERTANYAAN YANG DI AJUKAN ?
-        </div>
+        
 
-        <?php
-        $materils = "SELECT * FROM materi ";
-        $result = mysqli_query($connection, $materils);
-        while ($materi = mysqli_fetch_assoc($result)) {
-        ?>
-            <div>
-                <a class="btn btn-primary " href="./upload/materi/<?php echo $materi['pdf'] ?>">Download Bahan Belajar <i class="bi bi-cloud-arrow-down-fill"></i></a>
-            </div>
-        <?php } ?>
+        
         <?php
         $query = "SELECT * FROM user WHERE username = '$_SESSION[username]' ";
         $result = mysqli_query($connection, $query);
@@ -52,6 +42,19 @@ include 'admin/cek.php';
             $tanggapanPribadi = mysqli_query($connection, "SELECT * FROM tsiswa WHERE username='$user[username]'");
             if (mysqli_num_rows($tanggapanPribadi) == 0) {
         ?>
+
+                <div class="mt-5 mb-3  fs-2">
+                    TULISKAN TANGGAPAN MENGENAI VIDIO SESUAI PERTANYAAN YANG DI AJUKAN ?
+                </div>
+                <?php
+                $materils = "SELECT * FROM materi ";
+                $result = mysqli_query($connection, $materils);
+                while ($materi = mysqli_fetch_assoc($result)) {
+                ?>
+                    <div class="my-3">
+                        <a class="btn btn-primary " href="./upload/materi/<?php echo $materi['pdf'] ?>">Download Bahan Belajar <i class="bi bi-cloud-arrow-down-fill"></i></a>
+                    </div>
+                <?php } ?>
                 <div class="mt-5 mb-3 text-primary fs-5">
                     <i class="bi bi-person-fill"> </i> Penulis : <?php echo $user['username'] ?>
                 </div>
@@ -72,7 +75,7 @@ include 'admin/cek.php';
 
         <?php } else {
 
-                echo "<div class='alert text-dark alert-warning alert-dismissible fade show' role='alert'>
+                echo "<div class='alert text-dark alert-warning alert-dismissible fade show my-5' role='alert'>
                 <span>Kamu Sudah Mengirim Tanggapan</span><strong class='text-primary'>  $user[username] .</strong> <span> Hubungi admin Jika Kamu Merasa Belum Mengirim Jawaban </span>.
                 </div> ";
             }

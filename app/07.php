@@ -15,19 +15,21 @@ include 'admin/cek.php';
     <link rel="stylesheet" href="sources/css/master/simulasi.css">
     <!-- js -->
     <script src="sources/js/bootstrap.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 </head>
 
 <body>
-    <nav class="navbar bg-light p-3 mb-5">
+<nav class="navbar bg-dark text-light container rounded-pill p-3 mt-3">
         <div class="container-fluid ">
-            <h4 class="animated bounceIn title fw-bold ">TAHAP KESIMPULAN</h4>
-            <div class="d-flex">
-                <a class="animated bounceIn btn btn-primary fw-bold me-2" href="06.php"><i class="bi bi-skip-start-fill "></i> Back</a>
+            <div class="fs-4">TAHAP KESIMPULAN</div>
+            <div class="d-flex ">
+                <a class="animated bounceIn btn btn-primary fw-bold me-2 " href="05.php"> <i class="bi bi-skip-start-fill "></i> Kembali </a>
                 <a class="animated bounceIn btn btn-primary fw-bold me-2" href="soal.php"><i class="bi bi-file-earmark-text-fill"></i> Soal</a>
-                <a class="animated bounceIn btn btn-dark fw-bold" href="07.php?logout"><i class="bi bi-power"></i> Keluar</i></a>
+                <a class="animated bounceIn btn btn-light fw-bold" href="07.php?logout"><i class="bi bi-power"></i> Keluar</i></a>
             </div>
         </div>
     </nav>
+    
 
     <div class="container">
         <?php
@@ -37,12 +39,14 @@ include 'admin/cek.php';
             $kesimpulan = mysqli_query($connection, "SELECT * FROM kesimpulan WHERE username='$user[username]'");
             if (mysqli_num_rows($kesimpulan) == 0) {
         ?>
-                <h5 class=" mb-3"><i class="bi bi-person-fill"></i> Penulis : <?php echo $user['username'] ?> </h5>
+                <div class="mt-5 mb-3 text-primary fs-5">
+                    <i class="bi bi-person-fill"> </i> Penulis : <?php echo $user['username'] ?>
+                </div>
 
                 <form action="admin/run.php" method="post">
                     <input type=" text" name="username" value="<?php echo $user['username'] ?>" hidden>
                     <div class="form-group mb-3">
-                        <textarea class="form-control" name="kesimpulan" cols="30" rows="15" placeholder="Masukkan Kesimpulan Pribadi kamu  "></textarea>
+                        <textarea class="form-control" id="editorFirst" name="kesimpulan" cols="30" rows="15" placeholder="Masukkan Kesimpulan Pribadi kamu  "></textarea>
                     </div>
                     <div class="input-group">
                         <input type="submit" class="btn btn-primary btn-gradient fw-bold w-100 " name="kesimpulanAdd" value="Kirim">
@@ -50,7 +54,7 @@ include 'admin/cek.php';
                 </form>
         <?php } else {
 
-                echo "<div class='alert text-dark alert-warning alert-dismissible fade show' role='alert'>
+                echo "<div class='alert text-dark alert-warning alert-dismissible fade show my-5' role='alert'>
                 <span>Kamu Sudah Mengirim Kesimpulan</span><strong class='text-primary'>  $user[username] .</strong> <span> Hubungi admin Jika Kamu Merasa Belum Mengirim Jawaban </span>.
                 </div> ";
             }
@@ -58,4 +62,11 @@ include 'admin/cek.php';
     </div>
 </body>
 
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editorFirst'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </html>

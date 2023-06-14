@@ -47,10 +47,10 @@ include 'cek.php';
         </div>
         <div class="row">
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card">
+                <div style="height: 9rem;" class="card">
                     <div class="card-body">
                         <h5 class="card-title"><span class="text-primary">01</span> Kompetensi Dasar</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        
                         <!-- Fitur tambah Kompetensi Dasar -->
                         <button type="button" class="fw-bold btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#staticAddKompetensi">
                             <i class="bi bi-plus-circle-fill"></i> Tambah Kompetensi dasar
@@ -181,10 +181,9 @@ include 'cek.php';
             </div>
 
             <div class="col-sm-6 mb-3">
-                <div class="card">
+                <div style="height: 9rem;" class="card">
                     <div class="card-body">
                         <h5 class="card-title"> <span class="text-primary">02</span> Materi - <span class="text-primary">Tahap Stimulasi</span> </h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <!-- Fitur Materi -->
                         <button type="button" class="fw-bold btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#staticEditMateri">
                             <i class="bi bi-gear-fill"></i> Ubah Materi
@@ -236,10 +235,9 @@ include 'cek.php';
             </div>
 
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card">
+                <div style="height: 9rem;" class="card">
                     <div class="card-body">
                         <h5 class="card-title"><span class="text-primary">03</span> Masalah - <span class="text-primary"> Identifikasi Masalah</span> </h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <!-- Fitur tambah Identifikasi masalah -->
                         <button type="button" class="fw-bold btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#staticAddMasalah">
                             <i class="bi bi-plus-circle-fill"></i> Tambah Pertanyaan
@@ -320,10 +318,9 @@ include 'cek.php';
             </div>
 
             <div class="col-sm-6 mb-3">
-                <div class="card">
+                <div style="height: 9rem;" class="card">
                     <div class="card-body">
                         <h5 class="card-title"> <span class="text-primary">04</span> Tanggapan Siswa- <span class="text-primary">Tahap Pengumpulan Data</span> </h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <!-- Fitur Lihat tanggapan -->
                         <button type="button" class="fw-bold btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#staticListTanggapan">
                             <i class="bi bi-list"></i> Tanggapan Siswa
@@ -381,10 +378,9 @@ include 'cek.php';
                 </div>
             </div>
             <div class="col-sm-6 mb-3">
-                <div class="card">
+                <div style="height: 9rem;" class="card">
                     <div class="card-body">
                         <h5 class="card-title"><span class="text-primary">05</span> Tanggapan Kelompok <span class="text-primary">Tahap Pengolahan data</span></h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <!-- Fitur Lihat tanggapan Siswa -->
                         <button type="button" class="fw-bold btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#staticListTanggapanGuru">
                             <i class="bi bi-list"></i> List Tanggapan Kelompok
@@ -479,11 +475,10 @@ include 'cek.php';
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 mb-3">
-                <div class="card">
+            <div class="col-sm-6 mb-3 ">
+                <div style="height: 9rem;" class="card">
                     <div class="card-body">
                         <h5 class="card-title"> <span class="text-primary">06</span> Kesimpulan <span class="text-primary">- Tahap Kesimpulan</span></h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <!-- Fitur List Kesimpulan -->
                         <button type="button" class="fw-bold btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#staticListKesimpulan">
                             <i class="bi bi-list"></i> List Kesimpulan
